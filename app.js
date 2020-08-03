@@ -67,14 +67,19 @@ function handleModeClick() {
   }
 }
 
+// 마우스 우클릭 방지
 function handleCM(event) {
   event.preventDefault();
 }
 
 function handleSaveClick() {
+  // 이미지 데이타를 url로 변경
   const image = canvas.toDataURL();
+  // a태그 생성
   const link = document.createElement("a");
+  // 이미지 경로 추가
   link.href = image;
+  // 이미지 name 설정
   link.download = "PaintJS[🎨]";
   link.click();
 }
